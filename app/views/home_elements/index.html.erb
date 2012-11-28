@@ -1,0 +1,23 @@
+<h1>Listing home_elements</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @home_elements.each do |home_element| %>
+  <tr>
+    <td><%= home_element.name %></td>
+    <td><%= link_to 'Show', home_element %></td>
+    <td><%= link_to 'Edit', edit_home_element_path(home_element) %></td>
+    <td><%= link_to 'Destroy', home_element, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Home element', new_home_element_path %>

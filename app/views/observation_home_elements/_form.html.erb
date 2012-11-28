@@ -1,0 +1,17 @@
+<%= form_for(@observation_home_element) do |f| %>
+  <% if @observation_home_element.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@observation_home_element.errors.count, "error") %> prohibited this observation_home_element from being saved:</h2>
+
+      <ul>
+      <% @observation_home_element.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

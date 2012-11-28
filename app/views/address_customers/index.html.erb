@@ -1,0 +1,25 @@
+<h1>Listing address_customers</h1>
+
+<table>
+  <tr>
+    <th>From date</th>
+    <th>To date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @address_customers.each do |address_customer| %>
+  <tr>
+    <td><%= address_customer.from_date %></td>
+    <td><%= address_customer.to_date %></td>
+    <td><%= link_to 'Show', address_customer %></td>
+    <td><%= link_to 'Edit', edit_address_customer_path(address_customer) %></td>
+    <td><%= link_to 'Destroy', address_customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Address customer', new_address_customer_path %>

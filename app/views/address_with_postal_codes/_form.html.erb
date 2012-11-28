@@ -1,0 +1,17 @@
+<%= form_for(@address_with_postal_code) do |f| %>
+  <% if @address_with_postal_code.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@address_with_postal_code.errors.count, "error") %> prohibited this address_with_postal_code from being saved:</h2>
+
+      <ul>
+      <% @address_with_postal_code.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

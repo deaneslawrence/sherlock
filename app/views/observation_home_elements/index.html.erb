@@ -1,0 +1,21 @@
+<h1>Listing observation_home_elements</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @observation_home_elements.each do |observation_home_element| %>
+  <tr>
+    <td><%= link_to 'Show', observation_home_element %></td>
+    <td><%= link_to 'Edit', edit_observation_home_element_path(observation_home_element) %></td>
+    <td><%= link_to 'Destroy', observation_home_element, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Observation home element', new_observation_home_element_path %>

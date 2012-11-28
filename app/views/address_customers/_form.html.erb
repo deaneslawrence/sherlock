@@ -1,0 +1,25 @@
+<%= form_for(@address_customer) do |f| %>
+  <% if @address_customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@address_customer.errors.count, "error") %> prohibited this address_customer from being saved:</h2>
+
+      <ul>
+      <% @address_customer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :from_date %><br />
+    <%= f.date_select :from_date %>
+  </div>
+  <div class="field">
+    <%= f.label :to_date %><br />
+    <%= f.date_select :to_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

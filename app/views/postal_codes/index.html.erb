@@ -1,0 +1,23 @@
+<h1>Listing postal_codes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+	<th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @postal_codes.each do |postal_code| %>
+  <tr>
+	<td><%= postal_code.name %></td>
+    <td><%= link_to 'Show', postal_code %></td>
+    <td><%= link_to 'Edit', edit_postal_code_path(postal_code) %></td>
+    <td><%= link_to 'Destroy', postal_code, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Postal code', new_postal_code_path %>

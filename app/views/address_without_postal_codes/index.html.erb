@@ -1,0 +1,21 @@
+<h1>Listing address_without_postal_codes</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @address_without_postal_codes.each do |address_without_postal_code| %>
+  <tr>
+    <td><%= link_to 'Show', address_without_postal_code %></td>
+    <td><%= link_to 'Edit', edit_address_without_postal_code_path(address_without_postal_code) %></td>
+    <td><%= link_to 'Destroy', address_without_postal_code, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Address without postal code', new_address_without_postal_code_path %>

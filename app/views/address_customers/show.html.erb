@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>From date:</b>
+  <%= @address_customer.from_date %>
+</p>
+
+<p>
+  <b>To date:</b>
+  <%= @address_customer.to_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_address_customer_path(@address_customer) %> |
+<%= link_to 'Back', address_customers_path %>

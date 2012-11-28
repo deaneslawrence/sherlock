@@ -1,0 +1,2 @@
+module ObservationHomeElementsHelper
+end
