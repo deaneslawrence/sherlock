@@ -1,4 +1,8 @@
 Sherlock::Application.routes.draw do
+  get "base_pages/home"
+
+  get "base_pages/help"
+
   resources :photos
 
   resources :countries
