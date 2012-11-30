@@ -2,6 +2,19 @@ class BasePagesController < ApplicationController
   def home
   end
 
-  def help
+  def products
   end
+
+  def services
+  end
+
+  def inspections
+  end
+
+  def contact
+  end 
+
+  def about
+  end
+
 end

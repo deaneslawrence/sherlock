@@ -1,11 +1,12 @@
 require 'spec_helper'
 
-describe "BasePages" do
-  describe "GET /base_pages" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get base_pages_index_path
-      response.status.should be(200)
+describe "Base pages" do
+
+  describe "Home page" do
+
+    it "should have the content 'Sherlock'" do
+      visit '/base_pages/home'
+      page.should have_content('Sherlock')
     end
   end
 end

@@ -1,7 +1,15 @@
 Sherlock::Application.routes.draw do
+  get "base_pages/products"
+
+  get "base_pages/services"
+
+  get "base_pages/inspections"
+
+  get "base_pages/about"
+
   get "base_pages/home"
 
-  get "base_pages/help"
+  get "base_pages/contact"
 
   resources :photos
 
