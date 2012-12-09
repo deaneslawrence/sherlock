@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121125065033) do
+ActiveRecord::Schema.define(:version => 20121208043409) do
 
   create_table "address_customers", :force => true do |t|
     t.date     "from_date"
@@ -103,6 +103,11 @@ ActiveRecord::Schema.define(:version => 20121125065033) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "name"
+  end
+
+  create_table "templates", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

@@ -1,4 +1,6 @@
 Sherlock::Application.routes.draw do
+  resources :templates
+
   get "base_pages/products"
 
   get "base_pages/services"
@@ -13,25 +15,9 @@ Sherlock::Application.routes.draw do
 
   resources :photos
 
-  resources :countries
-
-  resources :states
-
-  resources :cities
-
-  resources :postal_codes
-
-  resources :address_without_postal_codes
-
-  resources :address_with_postal_codes
-
-  resources :address_customers
-
   resources :customers
 
   resources :addresses
-
-  resources :observation_home_elements
 
   resources :home_elements
 
