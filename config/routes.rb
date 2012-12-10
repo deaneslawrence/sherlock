@@ -1,27 +1,25 @@
 Sherlock::Application.routes.draw do
-  resources :templates
 
-  get "base_pages/products"
+  root to: 'base_pages#home'
 
-  get "base_pages/services"
-
-  get "base_pages/inspections"
+  match '/signup',  to: 'customers#new'
+  match '/help',    to: 'base_pages#help'
+  match '/about',   to: 'base_pages#about'
+  match '/contact', to: 'base_pages#contact'
 
   get "base_pages/about"
-
-  get "base_pages/home"
-
   get "base_pages/contact"
-
-  resources :photos
-
-  resources :customers
+  get "base_pages/home"
+  get "base_pages/inspections"
+  get "base_pages/products"
+  get "base_pages/services"
 
   resources :addresses
-
+  resources :customers
   resources :home_elements
-
   resources :observations
+  resources :photos
+  resources :templates
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -2,11 +2,21 @@ require 'spec_helper'
 
 describe "Base pages" do
 
-  describe "Home page" do
+  subject { page }
 
-    it "should have the content 'Sherlock'" do
-      visit '/base_pages/home'
-      page.should have_content('Sherlock')
-    end
+  describe "Home page" do
+    before { visit root_path }
+
+    it { should have_selector('h1', text: 'Sherlock') }
+    it { should have_selector('title', text: full_title('')) }
+    it { should_not have_selector('title', text: '| Home') }
   end
+  
+  describe "Contact page" do
+    before { visit contact_path }
+
+    it { should have_selector('h1', text: 'Contact') }
+    it { should have_selector('title', text: full_title('Contact')) }
+  end
+  
 end
