@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121208043409) do
+ActiveRecord::Schema.define(:version => 20130114031814) do
 
   create_table "address_customers", :force => true do |t|
     t.date     "from_date"
@@ -54,6 +54,14 @@ ActiveRecord::Schema.define(:version => 20121208043409) do
     t.string   "first"
     t.string   "last"
     t.string   "company"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "email"
+  end
+
+  create_table "home_element_relationships", :force => true do |t|
+    t.integer  "parent_id"
+    t.integer  "child_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

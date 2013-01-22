@@ -3,6 +3,15 @@
 <p>
   <b>Name:</b>
   <%= @home_element.name %>
+  <b>Parent:</b>
+  <% @home_element.parent do |p| %>
+      <%= p.name %>
+  <% end %>    
+ <b>Children:</b>
+  <% @home_element.children.each do |c| %>
+      <%= c.name  %>
+  <% end %>
+
 </p>
 
 

@@ -2,7 +2,16 @@ class HomeElementsController < ApplicationController
   # GET /home_elements
   # GET /home_elements.json
   def index
-    @home_elements = HomeElement.all
+    # get HEs with no parents
+    @home_elements = HomeElement.joins("INNER JOIN home_element_relationships her ON home_elements.id != her.child_id")
+    # find their children
+    @home_elements[0].children.each do |c|
+      child_count = 0
+      c.each do |d|
+        c[0,child_count] = d
+        child_count+=1
+      end  
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,5 +88,9 @@ class HomeElementsController < ApplicationController
       format.html { redirect_to home_elements_url }
       format.json { head :no_content }
     end
+  end
+
+  def top_lay
+    @top_layer_elements = HomeElement.find(:all, :id => 1)
   end
 end
