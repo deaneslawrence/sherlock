@@ -9,6 +9,7 @@ gem 'bcrypt-ruby', '3.0.1'
 
 gem 'jquery-rails', '2.0.2'
 gem 'carrierwave'
+gem 'pg', '0.12.2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -19,7 +20,6 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'mysql2', '0.3.11'
   gem 'rspec-rails', '2.11.0'
 end
 

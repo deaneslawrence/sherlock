@@ -1,16 +1,18 @@
-class HomeElementsController < ApplicationController
+    class HomeElementsController < ApplicationController
   # GET /home_elements
   # GET /home_elements.json
   def index
+    @element_tree = Array.new()
     # get HEs with no parents
-    @home_elements = HomeElement.joins("INNER JOIN home_element_relationships her ON home_elements.id != her.child_id")
-    # find their children
-    @home_elements[0].children.each do |c|
-      child_count = 0
-      c.each do |d|
-        c[0,child_count] = d
-        child_count+=1
+    @home_elements = HomeElement.where("id NOT IN (" +  HomeElementRelationship.select(:child_id).to_sql + ")")
+    # loop top level
+    @home_elements.each do |c|
+      # build heirarchy array
+      @element_branch = Array.new(1, c)
+      if c.children != []
+        @element_branch.insert(-1, c.children.to_a)
       end  
+      @element_tree << @element_branch
     end
 
     respond_to do |format|

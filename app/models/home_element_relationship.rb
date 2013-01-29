@@ -12,4 +12,5 @@
 class HomeElementRelationship < ActiveRecord::Base
   belongs_to :parent, class_name: "HomeElement"
   belongs_to :child, class_name: "HomeElement"
+  belongs_to :Template
 end

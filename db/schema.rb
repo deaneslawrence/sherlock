@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20130114031814) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "belongs_to"
   end
 
   create_table "observation_home_elements", :force => true do |t|
